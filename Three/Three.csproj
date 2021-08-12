@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Department\DisplayTemplates\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>
