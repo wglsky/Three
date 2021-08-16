@@ -19,6 +19,7 @@ namespace Three.Controllers
             _employeeService = employeeService;
         }
 
+        // 显示某部门的全部员工
         public async Task<IActionResult> Index(int departmentId)
         {
             var department = await this._departmentService.GetById(departmentId);
@@ -28,9 +29,11 @@ namespace Three.Controllers
             return View(employees);
         }
 
+        // 向某部门添加员工
         public IActionResult Add(int departmentId)
         {
             ViewBag.Title = "Add Employee";
+            // 返回一个 model 到页面
             return View(new Employee
             {
                 DepartmentId = departmentId
@@ -46,6 +49,8 @@ namespace Three.Controllers
             }
             return RedirectToAction(nameof(Index), new { departmentId = model.DepartmentId });
         }
+
+
         public async Task<IActionResult> Fire(int employeeId)
         {
             var employee = await _employeeService.Fire(employeeId);
