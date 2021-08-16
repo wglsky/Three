@@ -30,6 +30,7 @@ namespace Three
             services.AddControllersWithViews();
             services.AddSingleton<IDepartmentService, DepartmentService>();
             services.AddSingleton<IEmployeeService, EmployeeService>();
+            // 
             services.Configure<ThreeOptions>(_configuration.GetSection("Three"));
 
         }
